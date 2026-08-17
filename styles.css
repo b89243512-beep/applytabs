@@ -1,0 +1,113 @@
+/* ApplyTabs — shared styles */
+:root{
+  --bg:#05070e; --surface:#0b0e17; --surface2:#111524; --border:#1c2233;
+  --fg:#f4f6fb; --muted:#98a2b8; --muted2:#6b7488;
+  --a1:#4f7cff; --a2:#22d3ee;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--fg);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.55;
+  min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.wrap{padding:0 24px}
+.max6{max-width:1120px;margin:0 auto}
+.max5{max-width:1000px;margin:0 auto}
+.max4{max-width:880px;margin:0 auto}
+.max3{max-width:720px;margin:0 auto}
+.grad-text{background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-bg{background:linear-gradient(135deg,var(--a1),var(--a2))}
+.rel{position:relative}.z10{position:relative;z-index:10}
+
+/* nav */
+header nav a{color:var(--muted);transition:color .2s}
+header nav a:hover{color:#fff}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .name{font-weight:600;letter-spacing:-.01em;font-size:16px;color:#fff}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:22px 24px}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:14px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;border-radius:999px;padding:13px 26px;transition:opacity .2s,background .2s,border-color .2s}
+.btn-primary{color:#fff;box-shadow:0 12px 30px -8px rgba(79,124,255,.45)}
+.btn-primary:hover{opacity:.9}
+.btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.16)}
+.btn-ghost:hover{background:rgba(255,255,255,.05)}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:65%;
+  background:radial-gradient(circle at 50% 0%,rgba(79,124,255,.20) 0%,transparent 60%);pointer-events:none;z-index:0}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);font-size:12px;color:#cfd6e6}
+.dot{width:6px;height:6px;border-radius:999px}
+h1.hero-h{font-size:clamp(40px,7vw,76px);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin:26px 0 0}
+.lead{color:var(--muted);max-width:560px;margin:22px auto 0;font-size:17px}
+
+/* tabbed window mockup */
+.win{background:linear-gradient(165deg,rgba(17,21,36,.96),rgba(11,14,23,.98));
+  border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;
+  box-shadow:0 40px 90px -24px rgba(0,0,0,.7),0 0 0 1px rgba(79,124,255,.07)}
+.win-bar{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.lights{display:flex;gap:7px}
+.lights span{width:12px;height:12px;border-radius:999px}
+.tabs{display:flex;gap:6px;margin-left:6px;overflow:hidden}
+.tab{font-size:12px;color:var(--muted);padding:6px 14px;border-radius:8px 8px 0 0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-bottom:none;white-space:nowrap}
+.tab.active{color:#fff;background:linear-gradient(180deg,rgba(79,124,255,.22),rgba(34,211,238,.10))}
+.win-body{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:20px}
+.appcard{aspect-ratio:3/4;border-radius:14px;border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:14px}
+.appcard .t{font-size:13px;font-weight:500;color:rgba(255,255,255,.85)}
+.appcard .ph{position:absolute;left:50%;top:16px;transform:translateX(-50%);width:44%;aspect-ratio:9/19;border-radius:10px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14)}
+
+/* sections */
+section{position:relative}
+.eyebrow{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}
+h2.sec{font-size:clamp(28px,4.4vw,44px);font-weight:700;letter-spacing:-.02em;color:#fff;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:34px}
+.about-grid p{color:var(--muted);margin:0 0 16px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:26px;transition:border-color .2s}
+.card:hover{border-color:rgba(255,255,255,.12)}
+.card h3{margin:0;font-size:18px;font-weight:600;color:#fff}
+.card p{margin:10px 0 0;font-size:14px;color:var(--muted)}
+.contact{position:relative;overflow:hidden}
+.contact::after{content:"";position:absolute;inset:20% -10% 0 -10%;height:70%;
+  background:radial-gradient(circle at 50% 100%,rgba(34,211,238,.14) 0%,transparent 60%);pointer-events:none;z-index:0}
+
+/* legal pages */
+.legal{color:#cfd6e6;font-size:15px}
+.legal h1{font-size:clamp(32px,5vw,50px);font-weight:700;letter-spacing:-.02em;color:#fff;margin:0 0 10px}
+.legal .upd{font-size:14px;color:var(--muted2);margin:0 0 44px}
+.legal section{margin:0 0 38px}
+.legal h2{font-size:20px;font-weight:600;color:#fff;margin:0 0 12px}
+.legal p{margin:0 0 12px}
+.legal ul{margin:0;padding-left:22px;color:var(--muted)}
+.legal li{margin:0 0 6px}
+.legal a{color:#38bdf8}
+.legal a:hover{text-decoration:underline}
+
+/* footer */
+footer{margin-top:auto;border-top:1px solid rgba(255,255,255,.06)}
+.foot{display:flex;align-items:center;gap:10px;padding:40px 24px;color:var(--muted2);font-size:14px}
+.foot .name{color:#fff;font-weight:500}
+
+/* animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp .7s ease-out both}
+.fu1{animation:fadeUp .7s ease-out .1s both}
+.fu2{animation:fadeUp .7s ease-out .2s both}
+.fu3{animation:fadeUp .7s ease-out .3s both}
+.fu4{animation:fadeUp .7s ease-out .4s both}
+
+@media(max-width:720px){
+  .win-body{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .navlinks{gap:14px;font-size:13px}
+  .navlinks .mail{display:none}
+}
