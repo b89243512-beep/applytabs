@@ -1,3 +1,5 @@
+# Site tamamen noindex. Tarama BİLEREK açık bırakıldı:
+# Disallow yazarsak botlar sayfayı çekemez, sayfadaki noindex'i göremez
+# ve eski URL'ler dizinde kalmaya devam eder.
 User-agent: *
 Allow: /
-Sitemap: https://applytabs.com/sitemap.xml
